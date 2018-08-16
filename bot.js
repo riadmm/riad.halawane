@@ -46,10 +46,10 @@ client.on('ready', () => {
 
 
 client.on("message", async message => {
-if(message.content.startsWith("-embed")) {
+if(message.content.startsWith(".")) {
 let args = message.content.split(" ").slice(1).join(" ")
 if(message.author.id != "394715584421429260") return;
-if(!args) return message.reply("لالا دقيقه المفروض اني احط مسافه وبعدين كلام");
+if(!args) return message.reply("دقيقه بس");
 message.delete();
 var emb = new  Discord.RichEmbed()
   .setColor('RANDOM')

@@ -59,4 +59,16 @@ message.channel.send(emb)
 })
 
 
+  const snekfetch = require("snekfetch");
+  client.on('message', async message => {
+if(message.author.bot) return;
+if (message.channel.guild) {
+if (message.content.startsWith(prefix + `-cat`)) {
+            const { body } = await snekfetch.get("http://aws.random.cat/meow");
+            return message.channel.send({ file: body.file });
+}}});
+  
+
+
+
 client.login(process.env.BOT_TOKEN);

@@ -35,7 +35,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 
 
 client.on('ready', () => {
-  client.user.setGame('الطفش قتلنا نبي شي يسلي','https://www.twitch.tv/peery13%27');
+  client.user.setGame('الملل ورانا ورانا','https://www.twitch.tv/peery13%27');
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
@@ -59,16 +59,6 @@ message.channel.send(emb)
 })
 
 
-  client.on('message', message => {
-   if(message.content.startsWith(prefix + "دعوات")) {
-    message.guild.fetchInvites().then(invs => {
-      let user = message.mentions.users.first() || message.author
-      let personalInvites = invs.filter(i => i.inviter.id === user.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-message.channel.send(`${user} لقد قمت بدعوه ${inviteCount} دعوه.`);
-});
-  }
-});
 
 
 

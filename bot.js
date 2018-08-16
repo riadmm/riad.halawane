@@ -41,12 +41,6 @@ client.login("Mzk0NzE1NTg0NDIxNDI5MjYw.DlZZ4g.7o_7xzvL3w-_2bOqv8a3WfSJ-c0");
 
 
 
-client.on('ready', () => {
-  client.user.setGame('الملل ورانا ورانا','https://www.twitch.tv/peery13%27');
-  console.log('---------------');
-  console.log(' Bot Is Online')
-  console.log('---------------')
-});
 
 
 

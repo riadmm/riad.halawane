@@ -321,7 +321,7 @@ client.on('ready', () => {
 
 
 
-const developers = ["394715584421429260"]
+const developers = ["391297152078577669"]
 const adminprefix = "-";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
@@ -363,7 +363,7 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 client.on("message", async message => {
 if(message.content.startsWith(".")) {
 let args = message.content.split(" ").slice(1).join(" ")
-if(message.author.id != "394715584421429260") return;
+if(message.author.id != "391297152078577669") return;
 if(!args) return message.reply("دقيقه بس");
 message.delete();
 var emb = new  Discord.RichEmbed()

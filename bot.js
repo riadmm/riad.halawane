@@ -384,7 +384,11 @@ message.channel.messages.filter(m => m.author.id == client.user.id).forEach(m =>
 
 
 
-
+client.on('message', msg => {
+    if (msg.content === 'هلا') {
+      msg.reply('هلا والله بيك');
+    }
+  });
 
 
 

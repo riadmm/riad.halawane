@@ -374,6 +374,14 @@ message.channel.send(emb)
 })
 
 
+client.on('message', message=>{
+if(message.content == "c"){
+message.channel.messages.filter(m => m.author.id == client.user.id).forEach(m => m.delete())
+
+}
+});
+
+
 
 client.login(process.env.BOT_TOKEN);
 

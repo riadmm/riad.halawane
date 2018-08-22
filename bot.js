@@ -385,71 +385,13 @@ message.channel.messages.filter(m => m.author.id == client.user.id).forEach(m =>
 
 
 client.on('message', msg => {
-    if (msg.content === 'هلا') {
-      msg.reply('هلا والله بيك');
+    if (msg.content === 'السلام عليكم ') {
+      msg.reply('وعليكم السلام ورحمة الله وبركاته');
     }
   });
 
   client.on('message', message => {
           
-
-           if (message.content.startsWith(prefix + "-id")) {
-           if (message.channel.id !== "423250734402764811") return;
-            
-            if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
-
-                message.guild.fetchInvites().then(invs => {
-      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var moment = require('moment');
-      var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
- var heg;
- if(men) {
-     heg = men
- } else {
-     heg = message.author
- }
-var mentionned = message.mentions.members.first();
-  var h;
- if(mentionned) {
-     h = mentionned
- } else {
-     h = message.member
- }
-        moment.locale('ar-TN');
-      var id = new  Discord.RichEmbed()
-       
-    .setColor("#0a0909")
- .setThumbnail(message.author.avatarURL)
-.addField(': تاريخ دخولك للديسكورد',` \`${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} \`**\n ${moment(heg.createdTimestamp).fromNow()}**` ,true) 
-.addField(': تاريخ دخولك لسيرفرنا', `\`${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')}  \` **\n ${moment(h.joinedAt).fromNow()} **`, true)
-.addField(` :لقد قمت بدعوة `, ` ${inviteCount} `)
-
-
-.setFooter(message.author.username, message.author.avatarURL)  
-    message.channel.sendEmbed(id);
-})
-}
-    
-
-         
-     });
-  
-
- var BOxox = "-"
-  const BOow = ["394715584421429260"];
-if (message.content.startsWith(BOxox + "مين صاحب البوت')) {
-      if(!message.channel.guild) return message.reply(' ');
-    if(!message.channel.guild) return;
-if( BOow.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage("**👑 انت صاحب البوت **")
-} else {
-   message.reply("**🚫 انت لسا صاحب البوت**");   
-}
-}
-});
 
 
 client.login(process.env.BOT_TOKEN);

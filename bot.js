@@ -364,7 +364,7 @@ client.on("message", async message => {
 if(message.content.startsWith("-embed")) {
 let args = message.content.split(" ").slice(1).join(" ")
 if(message.author.id != "394715584421429260") return;
-if(!args) return message.reply("Romz");
+if(!args) return message.reply(" لالا دقيقه بس");
 message.delete();
 var emb = new  Discord.RichEmbed()
   .setColor('RANDOM')
@@ -384,13 +384,7 @@ message.channel.messages.filter(m => m.author.id == client.user.id).forEach(m =>
 
 
 
-client.on('message', msg => {
-    if (msg.content === 'السلام عليكم ') {
-      msg.reply('وعليكم السلام ورحمة الله وبركاته');
-    }
-  });
 
-  client.on('message', message => {
           
 
 

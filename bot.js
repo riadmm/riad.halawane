@@ -439,5 +439,18 @@ var mentionned = message.mentions.members.first();
      });
   
 
+ var BOxox = "-"
+  const BOow = ["394715584421429260"];
+if (message.content.startsWith(BOxox + "مين صاحب البوت')) {
+      if(!message.channel.guild) return message.reply(' ');
+    if(!message.channel.guild) return;
+if( BOow.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage("**👑 انت صاحب البوت **")
+} else {
+   message.reply("**🚫 انت لسا صاحب البوت**");   
+}
+}
+});
+
+
 client.login(process.env.BOT_TOKEN);
 

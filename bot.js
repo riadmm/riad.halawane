@@ -12,7 +12,7 @@ client.on('message', msg => {
    
   setInterval( function r() {
       role.setColor('RANDOM');
-    },5000);
+    },15000);
   
   }
 })

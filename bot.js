@@ -21,8 +21,6 @@ client.on('message', msg => {
 
 
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
 const PREFIX = "-"
 const Util = require('discord.js');
  

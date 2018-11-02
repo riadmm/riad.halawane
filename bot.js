@@ -39,7 +39,6 @@ const fs = require('fs');
 
 const gif = require("gif-search");
 
-const client = new Discord.Client({disableEveryone: true});
 
 const prefix = "!";
 /////////////////////////
@@ -358,7 +357,7 @@ client.on('message', message => {
         .addField('avatar', "افاتار الشخص المطلوب")
         .addField('gif', 'البحث عن جيف انت تطلبه')
         .addField('ping', 'معرفة ping البوت')
-        .setFooter('المزيد قريبا ان شاء الله!')
+        .setFoote r('المزيد قريبا ان شاء الله!')
       message.channel.send(helpEmbed);
     }
 });

@@ -547,20 +547,4 @@ client.on('message', async msg => { // eslint disable line
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.login(process.env.BOT_TOKEN);

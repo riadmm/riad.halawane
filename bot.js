@@ -321,10 +321,11 @@ client.on('message', message => {
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4"; //NourEldien Kfo
  
 const GOOGLE_API_KEY = 'AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8';
-const PREFIX = '-';
- const youtube = new YouTube(GOOGLE_API_KEY);
-
+const youtube = new YouTube(GOOGLE_API_KEY);
+const PREFIX = '!';
+ 
 const queue = new Map();
+const client = new Discord.Client({disableEveryone: true}); //Heeeeeeeeeeeeeemo
  
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
  
@@ -746,6 +747,7 @@ function play(guild, song) {
       }
     }).then(message =>{message.delete(5000)})
 }
+
 
 
 

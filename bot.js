@@ -169,7 +169,7 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(1);
 
     if(command === "clear") {
-        const emoji = client.emojis.find("name", "joy")
+        const emoji = client.emojis.find("name", "wastebasket")
     let textxt = args.slice(0).join("");
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {

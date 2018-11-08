@@ -555,7 +555,6 @@ client.on('message', async msg => { // eslint disable line
 
 
 
-client.on('message', message => {
 
     if (message.content === "-id") {
 

@@ -322,7 +322,8 @@ const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4"; //NourEldien Kfo
  
 const GOOGLE_API_KEY = 'AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8';
 const PREFIX = '-';
- 
+ const youtube = new YouTube(GOOGLE_API_KEY);
+
 const queue = new Map();
  
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));

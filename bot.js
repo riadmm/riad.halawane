@@ -307,7 +307,7 @@ client.on('message', message => {
 
         .setImage(`${omar.avatarURL}`)
 
-        .setFooter('اسم بوتك',client.user.avatarURL) 
+        .setFooter('King-bot',client.user.avatarURL) 
 
       message.channel.sendEmbed(embed);
 

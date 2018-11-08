@@ -111,7 +111,54 @@ client.on('message', async rokz => {
 
 
 
+client.on('message',async message => {
 
+  let mention = message.mentions.members.first();
+  
+  let Room = client.channels.get('507671958792437761');
+  
+  if(message.content.startsWith("رفض")) {
+  
+  if(message.guild.id !== 'ايدي السيرفر') return;
+  
+   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**للأسف ليس لديك صلاحية**").then(msg => msg.delete(5000));
+  
+  
+  if(!mention) return message.reply("منشن شخص");
+  
+  
+  
+  Room.send(`
+  **» العضو :** ${mention}
+  [ :x: ] :: لقد تم رفض العضو`);
+  
+  }
+  
+  });
+        
+client.on('message',async message => {
+
+  let mention = message.mentions.members.first();
+  
+  let Room = client.channels.get('510128984542019614');
+  
+  if(message.content.startsWith ("قبول")) {
+  
+  
+   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**للأسف ليس لديك صلاحية**").then(msg => msg.delete(5000));
+  
+  
+  if(!mention) return message.reply("منشن شخص");
+  
+  
+  
+  Room.send(`
+  **» العضو :** ${mention}
+  [ :white_check_mark: ] :: لقد تم قبول العضو واعطائه رتبة سبورت`);
+  
+  }
+  
+  });
 
 
 client.login(process.env.BOT_TOKEN);

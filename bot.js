@@ -325,7 +325,6 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 const PREFIX = '!';
  
 const queue = new Map();
-const client = new Discord.Client({disableEveryone: true}); //Heeeeeeeeeeeeeemo
  
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
  

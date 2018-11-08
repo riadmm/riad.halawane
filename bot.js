@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = '-'
+
 client.on('ready', () => {
   console.log('Online')
 })
@@ -21,7 +23,7 @@ client.on('message', msg => {
 
 client.on('message', async rokz => {
 
-    if(rokz.content.startsWith(prefix + "-تقديم")) {
+    if(rokz.content.startsWith(prefix + "تقديم")) {
 
       let lang = '';
 

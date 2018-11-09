@@ -319,27 +319,25 @@ client.on('message', message => {
 
 
 
+
 client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content ===   "-help") {
-		 message.channel.send('تم الأرسال في الخاص');
-            
+    let args = message.content.split(' ').slice(1);
+    if(message.content.split(' ')[0] == '-sug') 
+    var embed = new Discord.RichEmbed()
 
- message.author.sendMessage(
-╔[❖════════════❖]╗
-             Prefix = ' - '
-╚[❖════════════❖]╝
-╔[❖════════════❖]╗
-        Commands
-╚[❖════════════❖]╝
- ❖ -mute              لاعطاء شخصك ميوت
-❖ -unmute              لفك الميوت عنه
-❖ -r                               لتفعيل الرينبو                                                          ❖ -تقديم     للتقديم 
-لقبول الشخص.                                قبول
-❖ -clear                               لمسح الشات);
+    .setColor('RANDOM')
+    .addField('New Suggestion',`${args}`,true)
+    .addField('By',`${message.author.tag}`,true)
+    .setTimestamp()
 
-    }
+    let suggests = message.guild.channels.find(`name`, "اقتراحات");
+    suggests.send(embed).then(msg => {
+        msg.react('✅')
+    .then(() => msg.react('❌'))
+    })
+
 });
+
 
 
 

@@ -325,7 +325,7 @@ client.on('message', message => {
 		 message.channel.send('تم الأرسال في الخاص');
             
 
- message.author.sendMessage(**
+ message.author.sendMessage(
 ╔[❖════════════❖]╗
              Prefix = ' - '
 ╚[❖════════════❖]╝

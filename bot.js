@@ -319,6 +319,30 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content ===   "-help") {
+		 message.channel.send('تم الأرسال في الخاص');
+            
+
+ message.author.sendMessage(**
+╔[❖════════════❖]╗
+             Prefix = ' - '
+╚[❖════════════❖]╝
+╔[❖════════════❖]╗
+        Commands
+╚[❖════════════❖]╝
+ ❖ -mute              لاعطاء شخصك ميوت
+❖ -unmute              لفك الميوت عنه
+❖ -r                               لتفعيل الرينبو                                                          ❖ -تقديم     للتقديم 
+لقبول الشخص.                                قبول
+❖ -clear                               لمسح الشات);
+
+    }
+});
+
+
+
 
 
 

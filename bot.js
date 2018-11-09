@@ -823,7 +823,7 @@ function play(guild, song) {
           }
         ]
       }
-    }).then(message =>{message.delete(5000)}
+    }).then(message =>{message.delete(5000)
 }
 
 

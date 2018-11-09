@@ -404,9 +404,7 @@ client.on('message', message => {
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4"; //NourEldien Kfo
 const PREFIX = '-';
  
-const queue = new Map();
-const client = new Discord.Client({disableEveryone: true}); //Heeeeeeeeeeeeeemo
- 
+const queue = new Map(); 
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
  
 client.on('reconnecting', () => console.log('I am reconnecting now!'));

@@ -402,9 +402,6 @@ client.on('message', message => {
 
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4"; //NourEldien Kfo
- 
-const Discord = require('discord.js');
-const Util = require('discord.js');
 const PREFIX = '-';
  
 const queue = new Map();

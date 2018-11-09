@@ -316,30 +316,52 @@ client.on('message', message => {
 });
 
 
-
-client.on("message", async message => {
-      if (message.content.startsWith("-role")) {
-      if(!message.author.bot) return ;
-      if(!message.channel.guild) return ;
-      if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("أنت بحاجة إلى إذن `MANAGE_ROLES`");
-      if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.channel.send('بوت** ليس لديه إذن** `MANAGE_ROLES`');
-      var args = message.content.split(' ').slice(1); 
-      let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-      if(!args[0]) return message.reply(" `!addrole` [User] [role]");
-      if(!rMember) return message.reply("لا يمكن العثور على هذا المستخدم");
-      let role = args.join(" ").slice(22);
-      if(!role) return message.reply("حدد دورًا!");
-      let gRole = message.guild.roles.find(`name`, role);
-      if(!gRole) return message.reply("لا أستطيع أن أجد هذا الدور");
-      if(rMember.roles.has(gRole.id)) return message.reply(`لديه بالفعل هذا الدور`);
-      await(rMember.addRole(gRole.id));
-      try{
-        await message.channel.send(`<@${rMember.id}> تم اضافة الدور الى **${gRole.name}**`)
-      }catch(e){
-      }
-    }
-    }); 
-
+client.on("message", message => {
+	var args = message.content.split(' ').slice(1); 
+	var msg = message.content.toLowerCase();
+	if( !message.guild ) return;
+	if( !msg.startsWith( prefix + '-role' ) ) return;
+	if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
+	if( msg.toLowerCase().startsWith( prefix + 'role' ) ){
+		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد اعطاء الىه الرتبة**' );
+		if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطاءها الى الشخص**' );
+		var role = msg.split(' ').slice(2).join(" ").toLowerCase(); 
+		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
+		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطاءها الى الشخص**' );if( message.mentions.members.first() ){
+			message.mentions.members.first().addRole( role1 );
+			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم اعطاء الى **');
+		}
+		if( args[0].toLowerCase() == "all" ){
+			message.guild.members.forEach(m=>m.addRole( role1 ))
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الى الكل رتبة**');
+		} else if( args[0].toLowerCase() == "bots" ){
+			message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الى البوتات رتبة**');
+		} else if( args[0].toLowerCase() == "humans" ){
+			message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الى البشريين رتبة**');
+		} 	
+	} else {
+		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد اعطائها الرتبة**' );
+		if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );
+		var role = msg.split(' ').slice(2).join(" ").toLowerCase(); 
+		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
+		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );if( message.mentions.members.first() ){
+			message.mentions.members.first().addRole( role1 );
+			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم اعطاء **');
+		}
+		if( args[0].toLowerCase() == "all" ){
+			message.guild.members.forEach(m=>m.addRole( role1 ))
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الكل رتبة**');
+		} else if( args[0].toLowerCase() == "bots" ){
+			message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البوتات رتبة**');
+		} else if( args[0].toLowerCase() == "humans" ){
+			message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
+			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البشريين رتبة**');
+		} 
+	} 
+});
 
 
 

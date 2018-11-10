@@ -413,7 +413,7 @@ m.delete();
 });// omar jedol / Codes
 omar.reply("`تم حذف جميع الرتب بنجاح`")
 }// omar jedol / Codes
-});
+})
 
 
 

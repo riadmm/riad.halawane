@@ -431,7 +431,7 @@ if (!message.content.startsWith(prefix)) return;
         .addField("User", user, true)
         message.channel.send({embed : muteembed});
         var muteembeddm = new Discord.RichEmbed()
-        .setAuthor(Warned!, user.displayAvatarURL)
+        .setAuthor(Warned!), user.displayAvatarURL)
         .setDescription(${user} تم اعطائك تحذير
 ${message.author.tag}  بواسطة
 [ ${reason} ] : السبب

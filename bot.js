@@ -408,13 +408,13 @@ client.on('message', message => {
 
 client.on('message', async message =>{
   if (message.author.boss) return;
-    var prefix = "$";
+    var prefix = "-";
 
 if (!message.content.startsWith(prefix)) return;
     let command = message.content.split(" ")[0];
      command = command.slice(prefix.length);
     let args = message.content.split(" ").slice(1);
-    if (command == "-warn") {
+    if (command == "warn") {
         if (!message.channel.guild) return;
         if(!message.guild.roles.find(r => r.name === 'warns')); //code by iBeAnthonyD
         if(!message.guild.roles.find(r => r.name === 'warns')); //code by iBeAnthonyD

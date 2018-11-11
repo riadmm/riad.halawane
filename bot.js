@@ -312,7 +312,6 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
 
     }
-
 });
 
 
@@ -335,7 +334,6 @@ client.on('message', message => {
         msg.react('✅')
     .then(() => msg.react('❌'))
     })
-
 });
 
 

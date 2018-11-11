@@ -398,13 +398,7 @@ client.on('message', message => {
 
             
 
-client.on('message', message => { 
-  if (message.content === "-list") { 
-  if(!message.channel.guild) return;
-   let embed = new Discord.RichEmbed() .setColor("RANDOM") 
- .addField("سيرفرات يلي البوت موجود فيها: " , client.guilds.size) 
- message.channel.sendEmbed(embed); 
-}})
+
 
 
 

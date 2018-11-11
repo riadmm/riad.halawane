@@ -405,6 +405,7 @@ client.on('message', message => {/// الفا كود | iBeAnthonyD_#1311
   .addField("**سيرفرات يلي البوت موجود فيها: **" , client.guilds.size)
   message.channel.sendEmbed(embed);
     }/// الفا كود | iBeAnthonyD_#1311
+})
 });
 
 

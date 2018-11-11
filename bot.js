@@ -396,8 +396,16 @@ client.on('message', message => {
                
 
 
-
-
+            
+client.on('message', message => {/// الفا كود | iBeAnthonyD_#1311
+     if (message.content === "-list") {
+         if(!message.channel.guild) return;
+     let embed = new Discord.RichEmbed()
+  .setColor("RANDOM") /// الفا كود | iBeAnthonyD_#1311
+  .addField("**سيرفرات يلي البوت موجود فيها: **" , client.guilds.size)
+  message.channel.sendEmbed(embed);
+    }/// الفا كود | iBeAnthonyD_#1311
+});
 
 
 

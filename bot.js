@@ -111,30 +111,7 @@ client.on('message', async rokz => {
 
 
 
-client.on('message',async message => {
 
-  let mention = message.mentions.members.first();
-  
-  let Room = client.channels.get('507671958792437761');
-  
-  if(message.content.startsWith("رفض")) {
-  
-  if(message.guild.id !== '507671958792437761') return;
-  
-   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**للأسف ليس لديك صلاحية**").then(msg => msg.delete(5000));
-  
-  
-  if(!mention) return message.reply("منشن شخص");
-  
-  
-  
-  Room.send(`
-  **» العضو :** ${mention}
-  [ :x: ] :: لقد تم رفض العضو`);
-  
-  }
-  
-  });
         
 client.on('message',async message => {
 

@@ -273,48 +273,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 
 
 
-client.on('message', message => {
-
-    if (message.content.startsWith("-avatar")) {
-
-        if (message.author.bot) return
-
-        var mentionned = message.mentions.users.first();
-
-    var omar;
-
-      if(mentionned){
-
-          var omar = mentionned;
-
-      } else {
-
-          var omar = message.author;
-
-          
-
-      }
-
-        const embed = new Discord.RichEmbed()
-
-        .setColor("RANDOM")
-
-        .setAuthor('Avatar Link :')
-
-        .setTitle('Click Here')
-
-        .setURL(`${omar.avatarURL}`)
-
-        .setImage(`${omar.avatarURL}`)
-
-        .setFooter('King-bot',client.user.avatarUR8L) 
-
-      message.channel.sendEmbed(embed);
-
-    }
-});
-
-
 
 
 
@@ -347,6 +305,20 @@ client.on('message', message => {
 
 
 
+client.on('message', msg => {
+
+  if (msg.content ===  prefix + 'colors'){
+              if (!msg.member.hasPermission('MANAGE_ROLES')) return msg.channel.sendMessage('**عذراً، أنت لا تمتلك الصلاحيات الازمة :x:**')
+      msg.channel.send('**تم عمل جميع الألوان بنجاح :white_check_mark: :tada: **')
+    setInterval(function(){})
+    let count = 0;
+    let ecount = 0;
+for(let x = 1; x < 101; x++){
+msg.guild.createRole({name:x,
+color: 'RANDOM'})
+              }
+            }
+       });
 
                
                

@@ -242,7 +242,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
 
-  if (msg.content ===  (prefix + '-colors'){
+  if (msg.content ===  (prefix + '-colors')
               if (!msg.member.hasPermission('MANAGE_ROLES')) return msg.channel.sendMessage('**عذراً، أنت لا تمتلك الصلاحيات الازمة :x:**')
       msg.channel.send('**تم عمل جميع الألوان بنجاح :white_check_mark: :tada: **')
     setInterval(function(){})

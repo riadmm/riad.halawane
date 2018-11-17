@@ -23,7 +23,7 @@ client.on('message', msg => {
 
 client.on('message', async rokz => {
 
-    if(rokz.content.startsWith(prefix + "تقديم")) {
+    if(rokz.content.startsWith(prefix + "-تقديم")) {
 
       let lang = '';
 
@@ -140,7 +140,7 @@ client.on('message',async message => {
 
 client.on('message', message => {
    if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'clear')) {
+if(message.content.startsWith(prefix + '-clear')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_MESSAGES`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -242,7 +242,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
 
-  if (msg.content ===  prefix + 'colors'){
+  if (msg.content ===  (prefix + '-colors'){
               if (!msg.member.hasPermission('MANAGE_ROLES')) return msg.channel.sendMessage('**عذراً، أنت لا تمتلك الصلاحيات الازمة :x:**')
       msg.channel.send('**تم عمل جميع الألوان بنجاح :white_check_mark: :tada: **')
     setInterval(function(){})

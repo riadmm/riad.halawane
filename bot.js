@@ -23,7 +23,7 @@ client.on('message', msg => {
 
 client.on('message', async rokz => {
 
-    if(rokz.content.startsWith(prefix + "-تقديم")) {
+    if(rokz.content.startsWith("-تقديم")) {
 
       let lang = '';
 
@@ -106,7 +106,6 @@ client.on('message', async rokz => {
     }
 
   })
-
 
 
 

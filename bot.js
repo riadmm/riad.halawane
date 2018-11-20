@@ -145,11 +145,11 @@ client.on('message',async message => {
 
   let mention = message.mentions.members.first();
   
-  let Room = client.channels.get('507671958792437761');
+  let Room = client.channels.get('510128984542019614');
   
   if(message.content.startsWith("رفض")) {
   
-  if(message.guild.id !== '507671958792437761') return;
+  if(message.guild.id !== '510128984542019614') return;
   
    if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**للأسف ليس لديك صلاحية**").then(msg => msg.delete(5000));
   

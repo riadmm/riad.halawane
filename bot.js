@@ -325,33 +325,47 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
   
   
   
-  
+Rocket.on('message', message => { //clear
+    if(!message.channel.guild) return;
+ if(message.content.startsWith(prefix + '-clear')) {
+ if(!message.channel.guild) return message.channel.send('**هذا الامر فقط للسيرفرات**').then(m => m.delete(5000));
+ if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ليس لديك برمشن adminstrator`' );
+ let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
+ let request = `Requested By ${message.author.username}`;
+ message.channel.send(`**هل انت متأكد من حذف الشات؟**`).then(msg => {
+ msg.react('✅')
+ .then(() => msg.react('❌'))
+ .then(() =>msg.react('✅'))
+
+ let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+ let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
+
+ let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+ let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+ reaction1.on("collect", r => {
+ message.channel.send(`سينحذف الشات ...`).then(m => m.delete(5000));
+ var msg;
+         msg = parseInt();
+
+       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+       message.channel.sendMessage("", {embed: {
+         title: "`` تــــم حذف الشات ``",
+         color: 0x06DF00,
+         footer: {
+
+         }
+       }}).then(msg => {msg.delete(3000)});
+
+ })
+reaction2.on("collect", r => {
+ message.channel.send(`**تم الغاء حذف الشات**`).then(m => m.delete(5000));
+ msg.delete();
+ })
+ })
+ }
+ });
   
  
-const invites = {};
-
-const wait = require('util').promisify(setTimeout);
-
-client.on('ready', () => {
-  wait(1000);
-
-  client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-});
-
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "general");
-    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
-  });
-});
 
 
 

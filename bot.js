@@ -383,13 +383,12 @@ client.on('message', message => {
             
 client.on('message',async message => {
 if(message.author.bot) return;
-if(message.channel.type === 'dm') return
+if(message.channel.type === 'dm') return;
   if(message.content.startsWith("الوان")) {
     message.channel.send(`**Server ${message.guild.name} Colors list:**\n\`\`\`\n` + message.guild.roles.filter(role => role.name.match(/[0-9]/g)).sort((a,b) => b.position - a.position).map(ro => ro.name).join(' , ') + '
 ');
   }
 });
-
 
 
 

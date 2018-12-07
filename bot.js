@@ -385,10 +385,7 @@ client.on('message', message => {
 
             
 
- client.on('message', msg => {//msg
-    if (msg.content === `${prefix}-colors`) {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/467436110276984852/518817020423307302/wqRnSaW.png"})
-    }
+ 
 
 
 

@@ -33,7 +33,7 @@ client.on('message', async rokz => {
 
       let fillter = m => m.author.id === rokz.author.id
 
-      await rokz.channel.send("وش اسمك وجاهز تدفع كريدت للسيرفر").then(e => {
+      await rokz.channel.send("جاهز تدفع كريدت للسيرفر").then(e => {
 
      rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
@@ -46,6 +46,7 @@ client.on('message', async rokz => {
 
        e.edit(`عندك سيرفر خاص فيك + تعهد انك تكون قد المسئولية
 [${lang}]`)
+       e.edit(`عندك سيرفر خاص فيك + تعهد انك تكون قد المسئولية
 
        rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 

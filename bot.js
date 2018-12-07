@@ -33,7 +33,7 @@ client.on('message', async rokz => {
 
       let fillter = m => m.author.id === rokz.author.id
 
-      await rokz.channel.send("جاهز تدفع كريدت للسيرفر").then(e => {
+      await rokz.channel.send("اللغة").then(e => {
 
      rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
@@ -44,7 +44,7 @@ client.on('message', async rokz => {
         co.first().delete();
 
 
-       e.edit(`عندك سيرفر خاص فيك + تعهد انك تكون قد المسئولية
+       e.edit(`المدة 
 [${lang}]`)
 
        rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
@@ -56,10 +56,7 @@ client.on('message', async rokz => {
           col.first().delete();
 
 
-            e.edit(`ᵈᵉᵐᵒᶰˢ لازم ترا تحط الشعار
-[${time}]
-[${lang}]`)
-            e.edit(`ᵈᵉᵐᵒᶰˢ لازم ترا تحط الشعار
+            e.edit('ليه تبي الرتبة
 [${time}]
 [${lang}]`)
 
@@ -92,23 +89,15 @@ client.on('message', async rokz => {
 تم التقديم بواسطة: ${rokz.author}
 `).then(rokzzz => {
 
-                  rokzzz.react("✅")
+                  rokzzz.react(":white_check_mark:")
 
-                  rokzzz.react("❌")
+                  rokzzz.react(":x:")
 
                 })
 
             })
 
        })
-
-     })
-
-   })
-
-    }
-
-  })
 
 
 

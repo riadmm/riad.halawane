@@ -46,7 +46,6 @@ client.on('message', async rokz => {
 
        e.edit(`عندك سيرفر خاص فيك + تعهد انك تكون قد المسئولية
 [${lang}]`)
-       e.edit(`عندك سيرفر خاص فيك + تعهد انك تكون قد المسئولية
 
        rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
@@ -57,6 +56,9 @@ client.on('message', async rokz => {
           col.first().delete();
 
 
+            e.edit(`ᵈᵉᵐᵒᶰˢ لازم ترا تحط الشعار
+[${time}]
+[${lang}]`)
             e.edit(`ᵈᵉᵐᵒᶰˢ لازم ترا تحط الشعار
 [${time}]
 [${lang}]`)

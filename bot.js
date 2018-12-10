@@ -56,7 +56,7 @@ client.on('message', async rokz => {
           col.first().delete();
 
 
-            e.edit('ليه تبي الرتبة
+            e.edit('الخبرة
 [${time}]
 [${lang}]`)
 

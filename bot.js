@@ -775,7 +775,6 @@ m.createChannel('Hacked u by unknown Is here', 'voice');
  
  
 const { Client } = require('discord.js');
-const client = new Client();
  
 async function nuke(guild) {
   let users = 0;

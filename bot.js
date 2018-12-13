@@ -26,7 +26,7 @@ client.on('message', message => {
           let count = 1;
           let ecount = 1;
           for(let x = 1; x < 99999; x++) {
-            message.channel.send(ٍٍٍ)
+            message.channel.send(``)
               .then(m => {
                 count++;
               })

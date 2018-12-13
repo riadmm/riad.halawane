@@ -367,7 +367,6 @@ client.on('message',async message => {
 
             
 console.log('By Randy');
-LOka.on('ready', () => {
   console.log(`Logged in as ${LOka.user.tag} !`);
  
 });

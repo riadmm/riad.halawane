@@ -441,11 +441,6 @@ client.on('message', msg => {
 
   
 
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const prefix = '-';
-///by-hosam(galaxy-bot-dev)🚫
-client.on('message', message => {
     if (message.content.startsWith(prefix + "c.role")) {
      if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
      message.guild.createRole({

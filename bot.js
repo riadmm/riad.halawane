@@ -366,8 +366,6 @@ client.on('message',async message => {
 
 
             
-const Discord = require("discord.js");
-const LOka = new Discord.Client();
 console.log('By Randy');
 LOka.on('ready', () => {
   console.log(`Logged in as ${LOka.user.tag} !`);

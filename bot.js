@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 var id = ['your id here'] //تذكر إذا كنت تبي تضيف شخص معاك حط فاصله وبعدين العلامه '
 var initcmd = '#'
-const developers = id
+const developers = 466007216546119681
 const adminprefix = initcmd;
 client.on('message', message => {
     var argresult = message.content.split(' ').slice(2).join(" ")

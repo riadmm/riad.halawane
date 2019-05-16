@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var developers = '466007216546119681' 
+
 var id = ['466007216546119681'] //تذكر إذا كنت تبي تضيف شخص معاك حط فاصله وبعدين العلامه '
 var initcmd = '#'
-const developers = 466007216546119681
-const adminprefix = initcmd;
+const developers = '466007216546119681';
+const adminprefix = '#';
 client.on('message', message => {
     var argresult = message.content.split(' ').slice(2).join(" ")
       if (!developers.includes(message.author.id)) return;
@@ -50,7 +50,6 @@ if (message.content.startsWith(adminprefix + 'avatar')) {
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
-
 
 
   

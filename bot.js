@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- 
+
+var developers = '466007216546119681' 
 var id = ['466007216546119681'] //تذكر إذا كنت تبي تضيف شخص معاك حط فاصله وبعدين العلامه '
 var initcmd = '#'
 const developers = 466007216546119681

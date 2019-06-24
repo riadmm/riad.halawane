@@ -63,7 +63,7 @@ client.on('ready',  () => {
 var prefix = ('!');
 
 client.on('message', message => {
-    if(message.content === prefix + 'ممكن لو سمحت يا بوتي اللذوذ تسويلي الوان يا قلبي ') {
+    if(message.content === prefix + ('ممكن لو سمحت يا بوتي اللذوذ تسويلي الوان يا قلبي ') {
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
       message.guild.createRole({

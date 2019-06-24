@@ -60,7 +60,7 @@ client.on('ready',  () => {
   console.log('By:M7md');
 });
 
-var prefix = ('!'):;
+var prefix = ('!');
 
 client.on('message', message => {
     if(message.content === prefix + 'ممكن لو سمحت يا بوتي اللذوذ تسويلي الوان يا قلبي ') {

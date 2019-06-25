@@ -75,7 +75,6 @@ client.on("guildMemberAdd", (member) => {
 
 
 
-client.on('message', message => {
     var prefix = "-";
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'أمسح يا سمسم')) {

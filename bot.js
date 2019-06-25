@@ -13,7 +13,7 @@ client.on('ready', () => {
 
 client.on('message', edited => {
     let args = edited.content.split(" ").slice(1).join(" ")
-    if (edited.content.startsWith(Prefix + '-ممكن تسوي الوان لعيون ديث جود')) {
+    if (edited.content.startsWith(Prefix + '-سوي الوان يا بطل')) {
         if (!args) return edited.channel.send('**:information_source: |  أكتب عدد الألوان التي تريدها مع الأمر**');
         if (!edited.member.hasPermission('MANAGE_ROLES')) return;
         edited.channel.send(`**${Check} | تم صنع :  \`${args}\` لون**`);

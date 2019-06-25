@@ -11,21 +11,15 @@ client.on('ready', () => {
 
 
 
-client.on('message', edited => {
-    let args = edited.content.split(" ").slice(1).join(" ")
-    if (edited.content.startsWith(prefix + '-سوي الوان يا بطل')) {
-        if (!args) return edited.channel.send('**:information_source: |  أكتب عدد الألوان التي تريدها مع الأمر**');
-        if (!edited.member.hasPermission('MANAGE_ROLES')) return;
-        edited.channel.send(`**${Check} | تم صنع :  \`${args}\` لون**`);
-        setInterval(function () {})
-        let count = 0;
-        let ecount = 0;
-        for (let x = 1; x < `${parseInt(args)+1}`; x++) {
-            edited.guild.createRole({
-                name: x,
-                color: 'RANDOM'
-            })
-        }
+client.on('message', function(message) {
+                  if(!message.channel.guild) return;
+    if(message.content ===  '-setcolors') {
+        if(message.member.hasPermission('MANAGE_ROLES')) {
+            setInterval(function(){})
+            message.channel.send('جاري عمل الالوان يرجى الانتظار لمدة دقيقة |white_check_mark')
+        }else{
+            message.channel.send('ما معاك البرمشن المطلوب  |x')
+            }
     }
 });
 

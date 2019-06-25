@@ -24,7 +24,7 @@ client.on('message', message => {//new msg event
                 client.on('ready', () => {//new ready event
                   setInterval(function(){
                       client.guilds.forEach(g => {
-                                  var role = g.roles.find('name', 'Rainbow bot.');//rainbow role name
+                                  var role = g.roles.find('name', 'Rainbow');//rainbow role name
                                   if (role) {
                                       role.edit({color : "RANDOM"});
                                   };

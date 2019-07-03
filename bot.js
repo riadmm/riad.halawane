@@ -29,7 +29,7 @@ client.on('ready', () => {//new ready event
                       role.edit({color : "RANDOM"});
                   };
       });
-  }, 700);//the rainbow time
+  }, 300);//the rainbow time
 })
 
 

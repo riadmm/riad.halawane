@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('message', message => {
  var prefix = "!"
-    if(message.content.startsWith(prefix + 'new')) {
+    if(message.content.startsWith(prefix + '!new')) {
         let args = message.content.split(' ').slice(1).join(' ');
         let support = message.guild.roles.find("name","Support Team");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
@@ -44,7 +44,7 @@ client.on('message', message => {
                                 ticket.sendEmbed(embed);
                 }) .catch();
     }
-    if(message.content.startsWith(prefix + 'close')) {
+    if(message.content.startsWith(prefix + '!close')) {
             if(!message.member.hasPermission("ADMINISTRATOR")) return;
         if(!message.channel.name.startsWith("𝑻𝑰𝑪𝑲𝑬𝑻")) {
             return;
